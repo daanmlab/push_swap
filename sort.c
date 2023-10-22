@@ -6,11 +6,43 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:18:25 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 17:41:47 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/22 22:09:48 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	find_and_lower_index(t_stack_item *start, int min)
+{
+	t_stack_item	*curr;
+
+	curr = start;
+	while (curr)
+	{
+		if (curr->content == min)
+			curr->index--;
+		curr = curr->next;
+	}
+}
+
+static int	get_min_and_incr_index(t_stack_item *start, unsigned int index,
+		int min)
+{
+	t_stack_item	*curr;
+
+	curr = start;
+	while (curr)
+	{
+		if (curr->index == index)
+		{
+			curr->index = index + 1;
+			if (curr->content < min)
+				min = curr->content;
+		}
+		curr = curr->next;
+	}
+	return (min);
+}
 
 void	sort(t_stack_item *start)
 {
@@ -26,24 +58,8 @@ void	sort(t_stack_item *start)
 		curr1 = start;
 		while (curr1->index != index)
 			curr1 = curr1->next;
-		min = curr1->content;
-		while (curr1)
-		{
-			if (curr1->index == index)
-			{
-				curr1->index = index + 1;
-				if (curr1->content < min)
-					min = curr1->content;
-			}
-			curr1 = curr1->next;
-		}
-		curr1 = start;
-		while (curr1)
-		{
-			if (curr1->content == min)
-				curr1->index--;
-			curr1 = curr1->next;
-		}
+		min = get_min_and_incr_index(start, index, curr1->content);
+		find_and_lower_index(start, min);
 		index++;
 		curr = curr->next;
 	}

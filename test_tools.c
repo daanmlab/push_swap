@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 00:43:13 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 13:40:05 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/22 22:02:07 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_stack_item(t_stack_item *stack_item)
 
 void	print_stack(t_stack_item *stack)
 {
-	t_stack_item *curr;
+	t_stack_item	*curr;
 
 	curr = stack;
 	if (!curr)

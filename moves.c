@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 12:01:49 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 21:50:43 by dabalm           ###   ########.fr       */
+/*   Created: 2023/10/22 21:05:22 by dabalm            #+#    #+#             */
+/*   Updated: 2023/10/22 22:01:55 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int main(int argc, char *argv[])
+t_stack_item	*swap_a(t_stack_item *stack_a)
 {
-    t_stack_item *start = arg_parse(argc, argv);
-    sort(start);
-    print_stack(start);
-    ft_putstr_fd("\n\nafter:\n", 1);
-    start = swap_a(start);
-    start = swap_a(start);
-    print_stack(start);
-    return (0);
+	t_stack_item	*temp;
+
+	ft_putstr_fd("SA\n", 1);
+	if (!stack_a || !stack_a->next)
+		return (stack_a);
+	temp = stack_a->next;
+	if (stack_a->next->next)
+	{
+		stack_a->next->next->prev = stack_a;
+		stack_a->next = stack_a->next->next;
+	}
+	else
+		stack_a->next = NULL;
+	stack_a->prev = temp;
+	temp->next = stack_a;
+	temp->prev = NULL;
+	return (temp);
 }
