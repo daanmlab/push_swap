@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 23:08:10 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 21:58:10 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/22 22:31:19 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ t_stack_item			*create_stack_item(int content, unsigned int index);
 void					*clear_stack(t_stack_item **stack);
 t_stack_item			*arg_parse(int argc, char *argv[]);
 void					sort(t_stack_item *start);
-t_stack_item			*swap_a(t_stack_item *stack_a);
+void					swap_a(t_stack_item **stack_a);
+void					swap_b(t_stack_item **stack_b);
+void					swap_both(t_stack_item **a, t_stack_item **b);

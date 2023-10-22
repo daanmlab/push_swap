@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:01:49 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 21:50:43 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/22 22:24:18 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 int main(int argc, char *argv[])
 {
     t_stack_item *start = arg_parse(argc, argv);
-    sort(start);
-    print_stack(start);
+    t_stack_item **stack_a = &start;
+    sort(*stack_a);
+    print_stack(*stack_a);
     ft_putstr_fd("\n\nafter:\n", 1);
-    start = swap_a(start);
-    start = swap_a(start);
-    print_stack(start);
+    swap_a(stack_a);
+    // swap_a(stack_a);
+    print_stack(*stack_a);
     return (0);
 }
