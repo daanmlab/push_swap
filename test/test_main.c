@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:01:49 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 23:52:01 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/23 19:23:46 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "test.h"
+#include "../parse/parse.h"
+#include "../stack/stack.h"
+#include "../moves/moves.h"
 
 int main(int argc, char *argv[])
 {

@@ -6,20 +6,21 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:56:18 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 22:00:48 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/23 19:24:35 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdlib.h>
+#include "parse.h"
+#include "../stack/stack.h"
+#include "../libft/libft.h"
 
-void	*write_error(char *error_message)
+static void	*write_error(char *error_message)
 {
 	ft_putstr_fd(error_message, 1);
 	return (NULL);
 }
 
-int	check_uniq(t_stack_item *start)
+static int	check_uniq(t_stack_item *start)
 {
 	t_stack_item	*curr;
 	t_stack_item	*curr1;
@@ -39,7 +40,7 @@ int	check_uniq(t_stack_item *start)
 	return (1);
 }
 
-t_stack_item	*create_with_checks(char *str)
+static t_stack_item	*create_with_checks(char *str)
 {
 	int				temp;
 	t_stack_item	*start;

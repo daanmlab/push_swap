@@ -6,11 +6,11 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:59:40 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 22:02:13 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/23 19:04:06 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
 t_stack_item	*create_stack_item(int content, unsigned int index)
 {

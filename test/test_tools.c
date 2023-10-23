@@ -6,14 +6,17 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 00:43:13 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 22:02:07 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/23 19:36:41 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../stack/stack.h"
+#include "../libft/libft.h"
+#include "test.h"
 
 void	print_stack_item(t_stack_item *stack_item)
 {
+	
 	if (!stack_item)
 	{
 		ft_putstr_fd("null", 1);

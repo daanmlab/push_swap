@@ -6,11 +6,14 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:18:25 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 22:09:48 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/23 19:08:26 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+
+#include "parse.h"
+#include "../stack/stack.h"
+#include "../libft/libft.h"
 
 static void	find_and_lower_index(t_stack_item *start, int min)
 {
