@@ -6,11 +6,18 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:59:40 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/23 19:04:06 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/26 01:19:32 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
+
+// unsigned int		index;
+// int					content;
+// int					cost;
+// struct s_stack_item	*bff;
+// struct s_stack_item	*prev;
+// struct s_stack_item	*next;
 
 t_stack_item	*create_stack_item(int content, unsigned int index)
 {
@@ -19,8 +26,10 @@ t_stack_item	*create_stack_item(int content, unsigned int index)
 	ret = (t_stack_item *)malloc(sizeof(t_stack_item));
 	if (!ret)
 		return (NULL);
-	ret->content = content;
 	ret->index = index;
+	ret->content = content;
+	ret->cost = 0;
+	ret->bff = NULL;
 	ret->prev = NULL;
 	ret->next = NULL;
 	return (ret);
@@ -40,4 +49,19 @@ void	*clear_stack(t_stack_item **stack)
 	}
 	*stack = NULL;
 	return (NULL);
+}
+
+int	get_stack_length(t_stack_item **stack)
+{
+	t_stack_item	*curr;
+	int				count;
+
+	curr = *stack;
+	count = 0;
+	while (curr)
+	{
+		count++;
+		curr = curr->next;
+	}
+	return (count);
 }

@@ -6,13 +6,13 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:56:18 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/23 19:24:35 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/24 23:39:32 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
-#include "../stack/stack.h"
 #include "../libft/libft.h"
+#include "../stack/stack.h"
+#include "parse.h"
 
 static void	*write_error(char *error_message)
 {

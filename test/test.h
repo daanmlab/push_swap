@@ -14,7 +14,7 @@
 # define TEST_H
 # include "../stack/stack.h"
 
-int	put_pointer_addr(void *p);
+int		put_pointer_addr(void *p);
 void	print_stack_item(t_stack_item *stack_item);
 void	print_stack(t_stack_item *stack);
 #endif

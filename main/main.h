@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 23:08:10 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/22 23:25:38 by dabalm           ###   ########.fr       */
+/*   Created: 2023/10/24 22:40:24 by dabalm            #+#    #+#             */
+/*   Updated: 2023/10/26 01:10:42 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "moves/moves.h"
-#include <unistd.h>
+#include "../stack/stack.h"
 
-
-int						put_pointer_addr(void *p);
-void					print_stack_item(t_stack_item *stack_item);
-void					print_stack(t_stack_item *stack);
-t_stack_item			*create_stack_item(int content, unsigned int index);
-void					*clear_stack(t_stack_item **stack);
-t_stack_item			*arg_parse(int argc, char *argv[]);
-void					sort(t_stack_item *start);
+void	prep_b(t_stack_item **stack_a, t_stack_item **stack_b);
+void	prep_a(t_stack_item **stack_a, t_stack_item **stack_b);
+void	find_all_bffs(t_stack_item **stack_a, t_stack_item **stack_b);
+void	calc_all_cost(t_stack_item **stack_b);
+int		get_moves_to_top_and_set_go_up(t_stack_item *node);
