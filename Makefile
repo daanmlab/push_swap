@@ -6,7 +6,7 @@
 #    By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 22:54:09 by dabalm            #+#    #+#              #
-#    Updated: 2023/10/26 01:07:13 by dabalm           ###   ########.fr        #
+#    Updated: 2023/10/30 19:36:01 by dabalm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,22 +14,18 @@ NAME = push_swap
 
 PUSH_SWAP_LIB = push_swap.a
 
-
-
 SRCS =  moves/swap.c \
 		moves/push.c \
 		moves/rotate.c \
 		moves/reverse_rotate.c \
 		parse/parse.c \
+		parse/parse_utils.c \
 		stack/stack_tools.c \
-		test/put_pointer_addr.c \
-		test/test_tools.c \
 		main/prep.c \
+		main/prep_utils.c \
 		main/bff.c \
-		main/cost.c
-		
-
-OBJS = $(SRCS:.c=.o)
+		main/cost.c \
+		main.c 	
 
 MAIN = main.c
 
@@ -39,29 +35,20 @@ LIBFT = libft/libft.a
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
-TEST_ARGS = 12 -200 23 -40 5 2 8 1 9
-
-$(PUSH_SWAP_LIB): $(OBJS)
+$(NAME): $(SRCS)
 	@make -sC ./libft
-	#@$(CC) -c $(FLAGS) $(SRCS)
-	@ar rcs $(PUSH_SWAP_LIB) $(OBJS)
+	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
 
-all : $(PUSH_SWAP_LIB)
-
-test : $(PUSH_SWAP_LIB) $(MAIN)
-	$(CC) $(FLAGS) $(MAIN) $(PUSH_SWAP_LIB) $(LIBFT) -o $(NAME)
-	./$(NAME) $(TEST_ARGS)
-	./push_swap_visualizer/build/bin/visualizer
+all : $(NAME)
 
 clean :
-	rm -rf $(OBJS)
 	$(MAKE) clean -sC ./libft
 
 fclean : clean
 	@$(MAKE) fclean -sC ./libft
-	rm -rf $(NAME) $(PUSH_SWAP_LIB)
+	rm -rf $(NAME)
 
 fnorm :
 	@$(MAKE) -s fclean

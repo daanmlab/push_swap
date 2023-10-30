@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 00:46:52 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/26 01:20:46 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/30 19:23:20 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,20 @@ void	calc_all_cost(t_stack_item **stack_b)
 		curr->cost = calc_cost(curr->bff, curr);
 		curr = curr->next;
 	}
+}
+
+t_stack_item	*get_smallest_cost(t_stack_item **stack_b)
+{
+	t_stack_item	*curr;
+	t_stack_item	*min_cost_node;
+
+	curr = (*stack_b);
+	min_cost_node = (*stack_b);
+	while (curr)
+	{
+		if (curr->cost < min_cost_node->cost)
+			min_cost_node = curr;
+		curr = curr->next;
+	}
+	return (min_cost_node);
 }

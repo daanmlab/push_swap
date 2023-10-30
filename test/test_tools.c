@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 00:43:13 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/25 00:51:08 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/27 00:22:53 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ void	print_stack_item(t_stack_item *stack_item)
 	ft_putstr_fd("-----------------\n", 1);
 	ft_putstr_fd("addres:  ", 1);
 	put_pointer_addr(stack_item);
-	ft_putstr_fd("\n", 1);
-	ft_putstr_fd("index:   ", 1);
-	ft_putnbr_fd(stack_item->index, 1);
 	ft_putstr_fd("\n", 1);
 	ft_putstr_fd("content: ", 1);
 	ft_putnbr_fd(stack_item->content, 1);

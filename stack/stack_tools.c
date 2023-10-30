@@ -6,29 +6,23 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:59:40 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/26 01:19:32 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/29 19:35:47 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
 #include "stack.h"
 
-// unsigned int		index;
-// int					content;
-// int					cost;
-// struct s_stack_item	*bff;
-// struct s_stack_item	*prev;
-// struct s_stack_item	*next;
-
-t_stack_item	*create_stack_item(int content, unsigned int index)
+t_stack_item	*create_stack_item(int content)
 {
 	t_stack_item	*ret;
 
 	ret = (t_stack_item *)malloc(sizeof(t_stack_item));
 	if (!ret)
 		return (NULL);
-	ret->index = index;
 	ret->content = content;
 	ret->cost = 0;
+	ret->go_up = 0;
 	ret->bff = NULL;
 	ret->prev = NULL;
 	ret->next = NULL;
@@ -49,6 +43,15 @@ void	*clear_stack(t_stack_item **stack)
 	}
 	*stack = NULL;
 	return (NULL);
+}
+
+t_stack_item	*add_to_stack(int content, t_stack_item *node)
+{
+	if (!node)
+		return (create_stack_item(content));
+	node->next = create_stack_item(content);
+	node->next->prev = node;
+	return (node->next);
 }
 
 int	get_stack_length(t_stack_item **stack)

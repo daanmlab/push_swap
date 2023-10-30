@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   prep_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 10:31:50 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/29 12:40:15 by dabalm           ###   ########.fr       */
+/*   Created: 2023/10/30 19:34:36 by dabalm            #+#    #+#             */
+/*   Updated: 2023/10/30 19:36:53 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	i;
+#include "main.h"
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+int	is_sorted(t_stack_item **stack)
+{
+	t_stack_item	*curr;
+
+	curr = (*stack)->next;
+	while (curr)
+	{
+		if (curr->content < curr->prev->content)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
 }
