@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:01:46 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/30 19:35:25 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/30 23:17:16 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	main(int argc, char *argv[])
 	if (is_sorted(stack_a))
 		return (0);
 	prep_b(stack_a, stack_b);
-	prep_a(stack_a, stack_b);
+	prep_a(stack_a);
 	if ((*stack_b))
 		go(stack_a, stack_b);
 	free_stack(stack_a);

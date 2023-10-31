@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 22:39:12 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/30 19:35:01 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/30 22:54:00 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,33 +71,28 @@ void	prep_b(t_stack_item **stack_a, t_stack_item **stack_b)
 /**
  * to get the smallest node in the stack
 */
-static t_stack_item	*get_min(t_stack_item **stack)
-{
-	t_stack_item	*curr;
-	t_stack_item	*selected;
+// static t_stack_item	*get_min(t_stack_item **stack)
+// {
+// 	t_stack_item	*curr;
+// 	t_stack_item	*selected;
 
-	curr = (*stack);
-	selected = curr;
-	while (curr)
-	{
-		if (curr->content < selected->content)
-			selected = curr;
-		curr = curr->next;
-	}
-	return (selected);
-}
+// 	curr = (*stack);
+// 	selected = curr;
+// 	while (curr)
+// 	{
+// 		if (curr->content < selected->content)
+// 			selected = curr;
+// 		curr = curr->next;
+// 	}
+// 	return (selected);
+// }
 
 /**
  * to sort stack_a
 */
-void	prep_a(t_stack_item **stack_a, t_stack_item **stack_b)
+void	prep_a(t_stack_item **stack_a)
 {
-	int				stack_a_length;
-	int				temp;
-	t_stack_item	*selected;
 
-	temp = get_min(stack_a)->content;
-	selected = (*stack_b);
-	stack_a_length = get_stack_length(stack_a);
+
 	tiny_sort(stack_a, get_stack_length(stack_a));
 }
