@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
+/*   By: andrealbuquerque <andrealbuquerque@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:26:12 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/30 23:21:05 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/31 01:03:42 by andrealbuqu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**get_all_args(int argc, char *argv[])
 	while (i < argc)
 	{
 		temp1 = ft_strjoin(argv[i], " ");
-		temp2 = ft_strjoin(temp1, result);
+		temp2 = ft_strjoin(result, temp1);
 		free(temp1);
 		free(result);
 		result = temp2;

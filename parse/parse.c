@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
+/*   By: andrealbuquerque <andrealbuquerque@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:56:18 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/30 19:32:53 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/10/31 01:00:25 by andrealbuqu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,13 @@ t_stack_item	*parse(int argc, char *argv[])
 	int				i;
 
 	args = get_all_args(argc, argv);
-	curr = set_stack(args[0]);
+	i = 0;
+	while (args[i])
+		i++;
+	curr = set_stack(args[--i]);
 	if (!curr)
 		return (NULL);
-	i = 0;
-	while (args[++i])
+	while (--i >= 0)
 	{
 		create_stack_item_w_checks(curr, args[i]);
 		if (!curr || !curr->prev)
@@ -65,7 +67,7 @@ t_stack_item	*parse(int argc, char *argv[])
 		curr->prev->next = curr;
 		curr = curr->prev;
 	}
-	while (i--)
+	while (args[++i])
 		free(args[i]);
 	free(args);
 	if (!check_uniq(curr))
