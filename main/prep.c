@@ -92,7 +92,5 @@ void	prep_b(t_stack_item **stack_a, t_stack_item **stack_b)
 */
 void	prep_a(t_stack_item **stack_a)
 {
-
-
 	tiny_sort(stack_a, get_stack_length(stack_a));
 }

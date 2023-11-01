@@ -6,13 +6,13 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:05:22 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/25 00:43:25 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/01 18:32:53 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-static void	push(t_stack_item **src, t_stack_item **dest)
+void	push(t_stack_item **src, t_stack_item **dest)
 {
 	t_stack_item	*temp;
 

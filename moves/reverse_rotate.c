@@ -6,13 +6,13 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:06:24 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/26 15:16:23 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/01 18:32:59 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "moves.h"
 
-static void	reverse_rotate(t_stack_item **stack)
+void	reverse_rotate(t_stack_item **stack)
 {
 	t_stack_item	*last;
 	t_stack_item	*first;

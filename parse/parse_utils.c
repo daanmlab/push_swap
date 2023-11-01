@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrealbuquerque <andrealbuquerque@stud    +#+  +:+       +#+        */
+/*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:26:12 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/31 01:03:42 by andrealbuqu      ###   ########.fr       */
+/*   Updated: 2023/11/01 18:39:43 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*write_error(char *error_message)
 {
-	error_message = "Error";
+	error_message = "Error\n";
 	ft_putstr_fd(error_message, 1);
 	return (NULL);
 }

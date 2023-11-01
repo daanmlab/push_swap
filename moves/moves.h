@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:50:48 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/24 18:11:54 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/01 18:34:07 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,11 @@ void	rr(t_stack_item **stack_a, t_stack_item **stack_b);
 void	sa(t_stack_item **stack_a);
 void	sb(t_stack_item **stack_b);
 void	ss(t_stack_item **stack_a, t_stack_item **stack_b);
+
+// for checker
+void	swap(t_stack_item **stack);
+void	push(t_stack_item **src, t_stack_item **dest);
+void	rotate(t_stack_item **stack);
+void	reverse_rotate(t_stack_item **stack);
 
 #endif
