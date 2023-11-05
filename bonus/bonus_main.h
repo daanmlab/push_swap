@@ -6,12 +6,12 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:57:18 by dabalm            #+#    #+#             */
-/*   Updated: 2023/11/01 19:02:05 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:03:19 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef BONUS_MAIN_H
+# define BONUS_MAIN_H
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>

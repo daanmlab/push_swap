@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 19:10:34 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/23 19:26:27 by dabalm           ###   ########.fr       */
+/*   Created: 2023/10/23 17:31:02 by dabalm            #+#    #+#             */
+/*   Updated: 2023/11/05 15:51:23 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#ifndef PARSE_H
+# define PARSE_H
+# include "../../libft/libft.h"
 # include "../stack/stack.h"
 
-int		put_pointer_addr(void *p);
-void	print_stack_item(t_stack_item *stack_item);
-void	print_stack(t_stack_item *stack);
+t_stack_item	*parse(int argc, char *argv[]);
+char			**get_all_args(int argc, char *argv[]);
+int				is_sorted(t_stack_item **stack);
+void			*write_error(char *error_message);
+int				check_uniq(t_stack_item *start);
+
+typedef struct s_temp_spice
+{
+	long		result;
+	int			error;
+	char		*next_ptr;
+}				t_temp_spice;
+
 #endif

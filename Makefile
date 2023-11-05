@@ -6,7 +6,7 @@
 #    By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 22:54:09 by dabalm            #+#    #+#              #
-#    Updated: 2023/11/01 19:00:39 by dabalm           ###   ########.fr        #
+#    Updated: 2023/11/05 16:18:24 by dabalm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,14 @@ SRCS =  moves/swap.c \
 		main/cost.c \
 		main.c 	
 
-SRCS_BONUS =	stack/stack_tools.c \
-				parse/parse_utils.c \
-				parse/parse.c \
-				moves/swap.c \
-				moves/push.c \
-				moves/rotate.c \
-				moves/reverse_rotate.c \
-				main/prep_utils.c \
+SRCS_BONUS =	bonus/stack/stack_tools.c \
+				bonus/parse/parse_utils.c \
+				bonus/parse/parse.c \
+				bonus/moves/swap.c \
+				bonus/moves/push.c \
+				bonus/moves/rotate.c \
+				bonus/moves/reverse_rotate.c \
+				bonus/main/prep_utils.c \
 				bonus/get_next_line.c \
 				bonus/utils.c \
 				bonus/main.c
@@ -67,6 +67,7 @@ clean :
 fclean : clean
 	@$(MAKE) fclean -sC ./libft
 	rm -rf $(NAME)
+	rm -rf $(NAME_BONUS)
 
 fnorm :
 	@$(MAKE) -s fclean
@@ -74,3 +75,5 @@ fnorm :
 	norminette $(SRCS) $(SRCS_BONUS) */*.h
 
 re : fclean all
+
+.PHONY : clean fclean fnorm re all

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrealbuquerque <andrealbuquerque@stud    +#+  +:+       +#+        */
+/*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:01:46 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/31 00:52:14 by andrealbuqu      ###   ########.fr       */
+/*   Updated: 2023/11/05 16:12:46 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "moves/moves.h"
 #include "parse/parse.h"
 #include "stack/stack.h"
-#include "test/test.h"
-#include <stdio.h>
 
 void	move_up_a(t_stack_item *node, t_stack_item **stack_a)
 {

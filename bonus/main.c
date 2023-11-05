@@ -6,16 +6,16 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:17:43 by dabalm            #+#    #+#             */
-/*   Updated: 2023/11/01 19:00:20 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:03:39 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main/main.h"
-#include "../moves/moves.h"
-#include "../parse/parse.h"
-#include "../stack/stack.h"
-#include "../test/test.h"
-#include "main.h"
+#include "bonus_main.h"
+#include "main/main.h"
+#include "moves/moves.h"
+#include "parse/parse.h"
+#include "stack/stack.h"
+#include <unistd.h>
 
 void	do_move1(char *move, t_stack_item **stack_a, t_stack_item **stack_b)
 {

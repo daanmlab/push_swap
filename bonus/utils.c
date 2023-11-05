@@ -6,11 +6,11 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:59:33 by dabalm            #+#    #+#             */
-/*   Updated: 2023/11/01 19:01:36 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:04:53 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "bonus_main.h"
 
 int	check(char *move)
 {

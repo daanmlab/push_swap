@@ -5,6 +5,11 @@
         "stdlib.h": "c",
         "libft.h": "c",
         "vector": "c",
-        "test.h": "c"
+        "test.h": "c",
+        "moves.h": "c",
+        "main.h": "c",
+        "parse.h": "c",
+        "stack.h": "c",
+        "bonus_main.h": "c"
     }
 }

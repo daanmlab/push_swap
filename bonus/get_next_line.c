@@ -6,11 +6,12 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:56:43 by dabalm            #+#    #+#             */
-/*   Updated: 2023/11/01 17:35:05 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:04:08 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "bonus_main.h"
+#include <unistd.h>
 
 static int	ft_strlen_nl(const char *str)
 {
