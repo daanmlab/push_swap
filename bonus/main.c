@@ -71,17 +71,23 @@ void	free_stack(t_stack_item **stack)
 	}
 }
 
-void	do_moves(t_stack_item **stack_a, t_stack_item **stack_b)
+int	do_moves(t_stack_item **stack_a, t_stack_item **stack_b)
 {
 	char	*curr_line;
 
 	curr_line = get_next_line(0);
 	while (curr_line)
 	{
+		if (!check(curr_line))
+		{
+			ft_putstr_fd("Error\n", 1);
+			return (0);
+		}
 		do_move1(curr_line, stack_a, stack_b);
 		do_move2(curr_line, stack_a, stack_b);
 		curr_line = get_next_line(0);
 	}
+	return (1);
 }
 
 int	main(int argc, char *argv[])
@@ -101,7 +107,8 @@ int	main(int argc, char *argv[])
 	start_b = NULL;
 	stack_b = &start_b;
 	stack_a = &start_a;
-	do_moves(stack_a, stack_b);
+	if (is_sorted(stack_a) || !do_moves(stack_a, stack_b))
+		return (0);
 	if (is_sorted(stack_a))
 		ft_putstr_fd("OK\n", 1);
 	else

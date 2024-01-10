@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrealbuquerque <andrealbuquerque@stud    +#+  +:+       +#+        */
+/*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 22:56:18 by dabalm            #+#    #+#             */
-/*   Updated: 2023/10/31 01:00:25 by andrealbuqu      ###   ########.fr       */
+/*   Updated: 2023/11/10 16:19:18 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,23 @@ void	create_stack_item_w_checks(t_stack_item *curr, char *content)
 	free(temp_itoa);
 }
 
+t_stack_item	*create_all_stack_items(t_stack_item *last, int argc,
+		char **args)
+{
+	t_stack_item	*curr;
+
+	curr = last;
+	while (--argc >= 0)
+	{
+		create_stack_item_w_checks(curr, args[argc]);
+		if (!curr || !curr->prev)
+			return (write_error("Error: malloc null'd out"));
+		curr->prev->next = curr;
+		curr = curr->prev;
+	}
+	return (curr);
+}
+
 t_stack_item	*parse(int argc, char *argv[])
 {
 	t_stack_item	*curr;
@@ -54,22 +71,20 @@ t_stack_item	*parse(int argc, char *argv[])
 
 	args = get_all_args(argc, argv);
 	i = 0;
-	while (args[i])
+	while (args && args[i])
 		i++;
+	if (!args)
+		return (NULL);
 	curr = set_stack(args[--i]);
 	if (!curr)
 		return (NULL);
-	while (--i >= 0)
-	{
-		create_stack_item_w_checks(curr, args[i]);
-		if (!curr || !curr->prev)
-			return (write_error("Error: malloc null'd out"));
-		curr->prev->next = curr;
-		curr = curr->prev;
-	}
-	while (args[++i])
-		free(args[i]);
+	curr = create_all_stack_items(curr, i, args);
+	i = 0;
+	while (args[i])
+		free(args[i++]);
 	free(args);
+	if (!curr)
+		return (NULL);
 	if (!check_uniq(curr))
 		return (write_error("Error: duplicate number found"));
 	return (curr);

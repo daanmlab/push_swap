@@ -50,24 +50,28 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-$(NAME): $(SRCS)
-	@make -sC ./libft
-	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
-
 all : $(NAME)
 
-bonus: $(SRCS_BONUS)
-	@make -sC ./libft
-	@$(CC) $(CFLAGS) $(SRCS_BONUS) $(LIBFT) -o $(NAME_BONUS)
+bonus : $(NAME_BONUS)
 
+$(NAME): $(SRCS)
+	@$(MAKE) -sC ./libft
+	@echo "Creating $(NAME)"
+	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+
+$(NAME_BONUS): $(SRCS_BONUS)
+	@$(MAKE) -sC ./libft
+	@echo "Creating $(NAME_BONUS)"
+	@$(CC) $(CFLAGS) $(SRCS_BONUS) $(LIBFT) -o $(NAME_BONUS)
 
 clean :
 	$(MAKE) clean -sC ./libft
 
-fclean : clean
+fclean :
 	@$(MAKE) fclean -sC ./libft
-	rm -rf $(NAME)
-	rm -rf $(NAME_BONUS)
+	@echo "Cleaning $(NAME)"
+	@rm -rf $(NAME)
+	@rm -rf $(NAME_BONUS)
 
 fnorm :
 	@$(MAKE) -s fclean
@@ -76,4 +80,4 @@ fnorm :
 
 re : fclean all
 
-.PHONY : clean fclean fnorm re all
+.PHONY : clean fclean fnorm re all bonus
